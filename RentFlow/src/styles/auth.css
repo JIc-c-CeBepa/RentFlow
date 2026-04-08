@@ -1,0 +1,233 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f1a14 0%, #18261d 45%, #221a14 100%);
+  color: #f3efe7;
+}
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 430px;
+  background: rgba(24, 38, 29, 0.95);
+  border: 1px solid rgba(114, 140, 104, 0.35);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+}
+
+.auth-tabs {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.tab {
+  flex: 1;
+  border: 1px solid rgba(114, 140, 104, 0.35);
+  background: #243328;
+  color: #e8e0d1;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.tab:hover {
+  background: #304335;
+}
+
+.tab.active {
+  background: linear-gradient(135deg, #6f8b5e 0%, #7b5a3a 100%);
+  color: #fffaf2;
+  border-color: rgba(164, 130, 92, 0.7);
+}
+
+.auth-form h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #f4eadb;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #d9d2c3;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 13px 14px;
+  border-radius: 10px;
+  border: 1px solid #4c5f4f;
+  background: #111b14;
+  color: #f3efe7;
+  font-size: 15px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-input {
+  padding-right: 54px !important;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(114, 140, 104, 0.35);
+  border-radius: 50%;
+  background: rgba(36, 51, 40, 0.95);
+  color: #b9c4b5;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: 0.2s;
+}
+
+.password-toggle:hover {
+  background: #304335;
+  color: #f3efe7;
+  border-color: rgba(164, 130, 92, 0.55);
+  box-shadow: 0 0 0 3px rgba(127, 160, 110, 0.14);
+}
+
+.password-toggle:active {
+  transform: translateY(-50%) scale(0.96);
+}
+
+.password-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+.password-toggle:hover {
+  color: #f3efe7;
+}
+
+.form-group input::placeholder {
+  color: #9eaa9a;
+}
+
+.form-group input:focus {
+  border-color: #7fa06e;
+  box-shadow: 0 0 0 3px rgba(127, 160, 110, 0.18);
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6f8b5e 0%, #7b5a3a 100%);
+  color: #fff9f2;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 8px 20px rgba(123, 90, 58, 0.25);
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #7d9b6c 0%, #8a6846 100%);
+  transform: translateY(-1px);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.error-text {
+  display: block;
+  margin-top: 6px;
+  color: #ff9d8f;
+  font-size: 13px;
+}
+
+.password-hint {
+  margin-top: -4px;
+  margin-bottom: 16px;
+  color: #b9c4b5;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  min-width: 280px;
+  max-width: 360px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  z-index: 9999;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.toast--success {
+  background: linear-gradient(135deg, #58724b 0%, #3f5a3d 100%);
+  color: #f7f2e8;
+  border: 1px solid rgba(140, 167, 127, 0.45);
+}
+
+.toast--error {
+  background: linear-gradient(135deg, #7b4a3a 0%, #5f3027 100%);
+  color: #fff2ec;
+  border: 1px solid rgba(170, 110, 92, 0.45);
+}
+
+.toast__close {
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .toast {
+    right: 10px;
+    left: 10px;
+    max-width: none;
+    min-width: auto;
+  }
+}

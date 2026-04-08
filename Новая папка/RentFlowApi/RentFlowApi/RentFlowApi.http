@@ -1,0 +1,6 @@
+@RentFlowApi_HostAddress = http://localhost:5177
+
+GET {{RentFlowApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
