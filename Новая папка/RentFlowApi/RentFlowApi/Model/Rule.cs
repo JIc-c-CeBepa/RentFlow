@@ -14,4 +14,5 @@ public partial class Rule
     public bool? IsActive { get; set; }
 
     public virtual ICollection<Property> Properties { get; set; } = new List<Property>();
+    
 }

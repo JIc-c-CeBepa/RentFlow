@@ -4,6 +4,7 @@ import Toast from "../components/Toast";
 import { formatPhone, isPhoneComplete } from "../utils/phoneMask";
 import { loginUser, registerUser } from "../services/AuthApi";
 import { useNavigate } from "react-router-dom";
+import { saveTokens, API_BASE_URL } from "../api/authFetch";
 
 function AuthPage() {
   const [mode, setMode] = useState("login");
@@ -160,7 +161,8 @@ function AuthPage() {
 
       const data = await loginUser(payload);
 
-      localStorage.setItem("token", data.token);
+      localStorage.setItem("accessToken", data.accessToken);
+      localStorage.setItem("refreshToken", data.refreshToken);
       localStorage.setItem("userId", data.userId);
       localStorage.setItem("role", JSON.stringify(data.role));
 
@@ -168,7 +170,8 @@ function AuthPage() {
 
       console.log("LOGIN RESPONSE:", data);
       console.log("LOGIN RESPONSE:", data.roleId);
-      localStorage.setItem("token", data.token);
+      localStorage.setItem("accessToken", data.accessToken);
+      localStorage.setItem("refreshToken", data.refreshToken);
       if (data.roleId === 3) {
         navigate("/client");
       }
@@ -202,7 +205,8 @@ function AuthPage() {
 
       const data = await registerUser(payload);
 
-      localStorage.setItem("token", data.token);
+      localStorage.setItem("accessToken", data.accessToken);
+      localStorage.setItem("refreshToken", data.refreshToken);
 
       showToast("Регистрация прошла успешно", "success");
 

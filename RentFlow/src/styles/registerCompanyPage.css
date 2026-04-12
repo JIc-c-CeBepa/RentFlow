@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+}
+
+.register-company-page {
+  min-height: 100vh;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f1a14 0%, #18261d 45%, #221a14 100%);
+}
+
+.register-company-card {
+  width: 100%;
+  max-width: 720px;
+  background: rgba(24, 38, 29, 0.95);
+  border: 1px solid rgba(114, 140, 104, 0.35);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.35);
+  color: #f3efe7;
+}
+
+.register-company-title {
+  margin: 0 0 10px;
+  font-size: 32px;
+}
+
+.register-company-subtitle {
+  margin: 0 0 24px;
+  color: #d2c9bb;
+}
+
+.register-company-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.register-company-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.register-company-group label {
+  font-size: 14px;
+  color: #d2c9bb;
+}
+
+.register-company-group input,
+.register-company-group textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(114, 140, 104, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  padding: 14px 16px;
+  font-size: 15px;
+  outline: none;
+}
+
+.register-company-group input:focus,
+.register-company-group textarea:focus {
+  border-color: #c89b66;
+}
+
+.register-company-group textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.register-company-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.register-company-back-btn,
+.register-company-submit-btn {
+  height: 50px;
+  border: none;
+  border-radius: 12px;
+  padding: 0 22px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.register-company-back-btn {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(114, 140, 104, 0.35);
+}
+
+.register-company-submit-btn {
+  flex: 1;
+  background: linear-gradient(135deg, #b37a45, #d9a066);
+  color: #fff;
+}
+
+.register-company-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .register-company-card {
+    padding: 22px;
+  }
+
+  .register-company-actions {
+    flex-direction: column;
+  }
+}   

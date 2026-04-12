@@ -1,7 +1,9 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using RentFlowApi.Model;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace RentFlowApi.Services
@@ -40,5 +42,7 @@ namespace RentFlowApi.Services
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+
+        
     }
 }

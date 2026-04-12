@@ -35,6 +35,7 @@ public partial class Property
 
     public DateTime CreatedAt { get; set; }
 
+    
     public virtual ICollection<Booking> Bookings { get; set; } = new List<Booking>();
 
     public virtual ICollection<CalendarEntry> CalendarEntries { get; set; } = new List<CalendarEntry>();

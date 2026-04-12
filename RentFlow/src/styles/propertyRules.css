@@ -1,0 +1,45 @@
+.property-rules-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.property-rule-card {
+  display: flex;
+  gap: 16px;
+  background: rgba(24, 38, 29, 0.95);
+  border: 1px solid rgba(114, 140, 104, 0.35);
+  border-radius: 18px;
+  padding: 18px 20px;
+}
+
+.property-rule-icon {
+  color: #d9a066;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 2px;
+}
+
+.property-rule-content {
+  min-width: 0;
+}
+
+.property-rule-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f3efe7;
+  margin-bottom: 6px;
+}
+
+.property-rule-description {
+  color: #d2c9bb;
+  line-height: 1.5;
+}
+
+.property-rules-empty {
+  background: rgba(24, 38, 29, 0.95);
+  border: 1px solid rgba(114, 140, 104, 0.35);
+  border-radius: 18px;
+  padding: 20px;
+}

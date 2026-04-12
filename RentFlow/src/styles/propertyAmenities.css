@@ -1,0 +1,38 @@
+.property-amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 14px;
+}
+
+.property-amenity-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(24, 38, 29, 0.95);
+  border: 1px solid rgba(114, 140, 104, 0.35);
+  border-radius: 18px;
+  padding: 16px 18px;
+}
+
+.property-amenity-icon-wrap {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  color: #d9a066;
+}
+
+.property-amenity-name {
+  color: #f3efe7;
+  font-size: 16px;
+}
+
+.property-amenities-empty {
+  background: rgba(24, 38, 29, 0.95);
+  border: 1px solid rgba(114, 140, 104, 0.35);
+  border-radius: 18px;
+  padding: 20px;
+}

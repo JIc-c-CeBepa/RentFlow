@@ -31,6 +31,7 @@ public partial class User
 
     public bool? IsActive { get; set; }
 
+    public byte[]? Photo {  get; set; }
     public DateTime CreatedAt { get; set; }
 
     public virtual ICollection<Booking> BookingCanceledByUsers { get; set; } = new List<Booking>();

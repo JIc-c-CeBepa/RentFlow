@@ -16,6 +16,7 @@ public partial class RentflowContext : DbContext
     {
     }
 
+    public virtual DbSet<RefreshToken> RefreshTokens { get; set; }
     public virtual DbSet<Amenity> Amenities { get; set; }
 
     public virtual DbSet<Booking> Bookings { get; set; }
@@ -67,6 +68,28 @@ public partial class RentflowContext : DbContext
         modelBuilder
             .UseCollation("utf8mb4_unicode_ci")
             .HasCharSet("utf8mb4");
+
+        
+
+        modelBuilder.Entity<RefreshToken>(entity =>
+        {
+            entity.ToTable("Refresh_Tokens");
+
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.UserId).HasColumnName("user_id");
+            entity.Property(e => e.Token).HasColumnName("token");
+            entity.Property(e => e.ExpiresAt).HasColumnName("expires_at");
+            entity.Property(e => e.CreatedAt).HasColumnName("created_at");
+            entity.Property(e => e.IsRevoked).HasColumnName("is_revoked");
+
+            entity.HasOne(d => d.User)
+                .WithMany()
+                .HasForeignKey(d => d.UserId)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("fk_refresh_tokens_user");
+        });
 
         modelBuilder.Entity<Amenity>(entity =>
         {
@@ -858,6 +881,8 @@ public partial class RentflowContext : DbContext
             entity.Property(e => e.Telegram)
                 .HasMaxLength(100)
                 .HasColumnName("telegram");
+            entity.Property(e => e.Photo)
+                .HasColumnName("photo");
 
             entity.HasOne(d => d.Owner).WithMany(p => p.Users)
                 .HasForeignKey(d => d.OwnerId)

@@ -144,3 +144,4 @@ C:\Users\Артём Баранов\Desktop\рабочий стол\4 курс\Ш
 C:\Users\Артём Баранов\Desktop\рабочий стол\4 курс\Шарипова\THE_LAST_STEP\Новая папка\RentFlowApi\RentFlowApi\obj\Debug\net8.0\RentFlowApi.genruntimeconfig.cache
 C:\Users\Артём Баранов\Desktop\рабочий стол\4 курс\Шарипова\THE_LAST_STEP\Новая папка\RentFlowApi\RentFlowApi\obj\Debug\net8.0\ref\RentFlowApi.dll
 C:\Users\Артём Баранов\Desktop\рабочий стол\4 курс\Шарипова\THE_LAST_STEP\Новая папка\RentFlowApi\RentFlowApi\bin\Debug\net8.0\RentFlowApi.staticwebassets.runtime.json
+C:\Users\Артём Баранов\Desktop\рабочий стол\4 курс\Шарипова\THE_LAST_STEP\Новая папка\RentFlowApi\RentFlowApi\obj\Debug\net8.0\RentFlowApi.sourcelink.json
