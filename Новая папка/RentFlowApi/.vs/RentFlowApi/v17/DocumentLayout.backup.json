@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\\u0410\u0440\u0442\u0451\u043C \u0411\u0430\u0440\u0430\u043D\u043E\u0432\\Desktop\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\4 \u043A\u0443\u0440\u0441\\\u0428\u0430\u0440\u0438\u043F\u043E\u0432\u0430\\THE_LAST_STEP\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430\\RentFlowApi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7E835F43-4B56-4424-AF70-C17BAA13F88D}|RentFlowApi\\RentFlowApi.csproj|c:\\users\\\u0430\u0440\u0442\u0451\u043C \u0431\u0430\u0440\u0430\u043D\u043E\u0432\\desktop\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\4 \u043A\u0443\u0440\u0441\\\u0448\u0430\u0440\u0438\u043F\u043E\u0432\u0430\\the_last_step\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430\\rentflowapi\\rentflowapi\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E835F43-4B56-4424-AF70-C17BAA13F88D}|RentFlowApi\\RentFlowApi.csproj|solutionrelative:rentflowapi\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7E835F43-4B56-4424-AF70-C17BAA13F88D}|RentFlowApi\\RentFlowApi.csproj|c:\\users\\\u0430\u0440\u0442\u0451\u043C \u0431\u0430\u0440\u0430\u043D\u043E\u0432\\desktop\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\4 \u043A\u0443\u0440\u0441\\\u0448\u0430\u0440\u0438\u043F\u043E\u0432\u0430\\the_last_step\\\u043D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430\\rentflowapi\\rentflowapi\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7E835F43-4B56-4424-AF70-C17BAA13F88D}|RentFlowApi\\RentFlowApi.csproj|solutionrelative:rentflowapi\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -55,19 +59,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ClientController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0442\u0451\u043C \u0411\u0430\u0440\u0430\u043D\u043E\u0432\\Desktop\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\4 \u043A\u0443\u0440\u0441\\\u0428\u0430\u0440\u0438\u043F\u043E\u0432\u0430\\THE_LAST_STEP\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430\\RentFlowApi\\RentFlowApi\\Controllers\\ClientController.cs",
+              "RelativeDocumentMoniker": "RentFlowApi\\Controllers\\ClientController.cs",
+              "ToolTip": "C:\\Users\\\u0410\u0440\u0442\u0451\u043C \u0411\u0430\u0440\u0430\u043D\u043E\u0432\\Desktop\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\4 \u043A\u0443\u0440\u0441\\\u0428\u0430\u0440\u0438\u043F\u043E\u0432\u0430\\THE_LAST_STEP\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430\\RentFlowApi\\RentFlowApi\\Controllers\\ClientController.cs*",
+              "RelativeToolTip": "RentFlowApi\\Controllers\\ClientController.cs*",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T08:49:49.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "BookingController.cs",
               "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0442\u0451\u043C \u0411\u0430\u0440\u0430\u043D\u043E\u0432\\Desktop\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\4 \u043A\u0443\u0440\u0441\\\u0428\u0430\u0440\u0438\u043F\u043E\u0432\u0430\\THE_LAST_STEP\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430\\RentFlowApi\\RentFlowApi\\Controllers\\BookingController.cs",
               "RelativeDocumentMoniker": "RentFlowApi\\Controllers\\BookingController.cs",
               "ToolTip": "C:\\Users\\\u0410\u0440\u0442\u0451\u043C \u0411\u0430\u0440\u0430\u043D\u043E\u0432\\Desktop\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\4 \u043A\u0443\u0440\u0441\\\u0428\u0430\u0440\u0438\u043F\u043E\u0432\u0430\\THE_LAST_STEP\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430\\RentFlowApi\\RentFlowApi\\Controllers\\BookingController.cs",
               "RelativeToolTip": "RentFlowApi\\Controllers\\BookingController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAzwEIAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAJIAAAAAAAAAAAAgwEIAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-11T18:58:37.104Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "BookingCreatedDto.cs",
               "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0442\u0451\u043C \u0411\u0430\u0440\u0430\u043D\u043E\u0432\\Desktop\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\4 \u043A\u0443\u0440\u0441\\\u0428\u0430\u0440\u0438\u043F\u043E\u0432\u0430\\THE_LAST_STEP\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430\\RentFlowApi\\RentFlowApi\\DTO\\BookingCreatedDto.cs",
               "RelativeDocumentMoniker": "RentFlowApi\\DTO\\BookingCreatedDto.cs",
@@ -75,12 +92,11 @@
               "RelativeToolTip": "RentFlowApi\\DTO\\BookingCreatedDto.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAA5wBAAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-11T18:57:44.66Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-11T18:57:44.66Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CreateBookingRequest.cs",
               "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0442\u0451\u043C \u0411\u0430\u0440\u0430\u043D\u043E\u0432\\Desktop\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\4 \u043A\u0443\u0440\u0441\\\u0428\u0430\u0440\u0438\u043F\u043E\u0432\u0430\\THE_LAST_STEP\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430\\RentFlowApi\\RentFlowApi\\DTO\\CreateBookingRequest.cs",
               "RelativeDocumentMoniker": "RentFlowApi\\DTO\\CreateBookingRequest.cs",
@@ -88,12 +104,11 @@
               "RelativeToolTip": "RentFlowApi\\DTO\\CreateBookingRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-11T18:57:13.781Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-11T18:57:13.781Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "PropertyController.cs",
               "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0442\u0451\u043C \u0411\u0430\u0440\u0430\u043D\u043E\u0432\\Desktop\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\4 \u043A\u0443\u0440\u0441\\\u0428\u0430\u0440\u0438\u043F\u043E\u0432\u0430\\THE_LAST_STEP\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430\\RentFlowApi\\RentFlowApi\\Controllers\\PropertyController.cs",
               "RelativeDocumentMoniker": "RentFlowApi\\Controllers\\PropertyController.cs",
@@ -101,12 +116,11 @@
               "RelativeToolTip": "RentFlowApi\\Controllers\\PropertyController.cs",
               "ViewState": "AgIAAEUBAAAAAAAAAAAYwFsBAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-11T16:55:16.667Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-11T16:55:16.667Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Property.cs",
               "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0442\u0451\u043C \u0411\u0430\u0440\u0430\u043D\u043E\u0432\\Desktop\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\4 \u043A\u0443\u0440\u0441\\\u0428\u0430\u0440\u0438\u043F\u043E\u0432\u0430\\THE_LAST_STEP\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430\\RentFlowApi\\RentFlowApi\\Model\\Property.cs",
               "RelativeDocumentMoniker": "RentFlowApi\\Model\\Property.cs",
@@ -118,7 +132,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Rule.cs",
               "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0442\u0451\u043C \u0411\u0430\u0440\u0430\u043D\u043E\u0432\\Desktop\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\4 \u043A\u0443\u0440\u0441\\\u0428\u0430\u0440\u0438\u043F\u043E\u0432\u0430\\THE_LAST_STEP\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430\\RentFlowApi\\RentFlowApi\\Model\\Rule.cs",
               "RelativeDocumentMoniker": "RentFlowApi\\Model\\Rule.cs",
@@ -130,7 +144,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Amenity.cs",
               "DocumentMoniker": "C:\\Users\\\u0410\u0440\u0442\u0451\u043C \u0411\u0430\u0440\u0430\u043D\u043E\u0432\\Desktop\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\4 \u043A\u0443\u0440\u0441\\\u0428\u0430\u0440\u0438\u043F\u043E\u0432\u0430\\THE_LAST_STEP\\\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430\\RentFlowApi\\RentFlowApi\\Model\\Amenity.cs",
               "RelativeDocumentMoniker": "RentFlowApi\\Model\\Amenity.cs",

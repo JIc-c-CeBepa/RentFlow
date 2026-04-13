@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { UserPlus, CalendarCheck } from "lucide-react";
 import "../styles/profileSidebar.css";
 
 function ProfileSidebar({
@@ -13,6 +14,7 @@ function ProfileSidebar({
   profileSaving,
   onLogout,
   onRegisterCompany,
+  onViewBookings,
 }) {
   const [isEditing, setIsEditing] = useState(false);
   const [form, setForm] = useState({
@@ -132,7 +134,9 @@ function ProfileSidebar({
                 className="profile-avatar-image"
               />
             ) : (
-              <div className="profile-avatar-placeholder">+</div>
+              <div className="profile-avatar-placeholder">
+                <UserPlus size={48} />
+              </div>
             )}
 
             <div className="profile-avatar-overlay">
@@ -225,12 +229,16 @@ function ProfileSidebar({
         )}
 
         <div className="profile-footer">
+          {user.roleId === 3 && onViewBookings && (
+            <button className="profile-bookings-btn" type="button" onClick={onViewBookings}>
+              <CalendarCheck size={20} />
+              Мои бронирования
+            </button>
+          )}
           {user.roleId === 3 && (
             <button className="register-company-btn" type="button" onClick={onRegisterCompany}>
               Зарегистрировать компанию
             </button>
-
-            
           )}
           <button className="profile-logout-btn" type="button" onClick={onLogout}>
             Выйти из аккаунта

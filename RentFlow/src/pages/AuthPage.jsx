@@ -1,12 +1,14 @@
 import { useState } from "react";
-import { Eye, EyeOff } from "lucide-react";
+import { Eye, EyeOff, Sun, Moon } from "lucide-react";
 import Toast from "../components/Toast";
 import { formatPhone, isPhoneComplete } from "../utils/phoneMask";
 import { loginUser, registerUser } from "../services/AuthApi";
 import { useNavigate } from "react-router-dom";
 import { saveTokens, API_BASE_URL } from "../api/authFetch";
+import { useTheme } from "../context/ThemeContext";
 
 function AuthPage() {
+  const { isDarkTheme, toggleTheme } = useTheme();
   const [mode, setMode] = useState("login");
 
   const navigate = useNavigate();
@@ -228,6 +230,15 @@ function AuthPage() {
 
   return (
     <div className="auth-page">
+      <button
+        className="auth-theme-btn"
+        type="button"
+        onClick={toggleTheme}
+        title={isDarkTheme ? "Светлая тема" : "Тёмная тема"}
+      >
+        {isDarkTheme ? <Sun size={22} /> : <Moon size={22} />}
+      </button>
+
       <Toast message={toast.message} type={toast.type} onClose={closeToast} />
 
       <div className="auth-card">

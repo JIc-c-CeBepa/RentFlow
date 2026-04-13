@@ -6,6 +6,7 @@ import PropertyAmenities from "../components/PropertyAmenities";
 import PropertyRules from "../components/PropertyRules";
 import BookingSidebar from "../components/BookingSidebar";
 import { API_BASE_URL, authFetch } from "../api/authFetch";
+import { generateBookingPDF } from "../utils/bookingPDF";
 import "../styles/propertyDetailsPage.css";
 
 function PropertyDetailsPage() {
@@ -96,8 +97,25 @@ function PropertyDetailsPage() {
       throw new Error(data?.message || data?.title || "Не удалось создать бронь");
     }
 
-    toast.success("Бронирование успешно создано");
-    console.log(data);
+    toast.success("Бронирование успешно создано! PDF скачивается...");
+
+    const bookingData = data.booking || data;
+    
+    const bookingForPDF = {
+      id: bookingData.id || Date.now(),
+      arrivalDate: bookingData.arrivalDate || bookingForm.arrivalDate,
+      departureDate: bookingData.departureDate || bookingForm.departureDate,
+      guestsCount: bookingForm.guestsCount,
+      totalAmount: bookingData.totalAmount || totalPrice,
+      prepaymentAmount: bookingData.prepaymentAmount || 0,
+      prepaymentPercent: bookingData.prepaymentPercent || 0,
+      statusId: bookingData.statusId || 1,
+      createdAt: bookingData.createdAt || new Date().toISOString(),
+      needsContactlessCheckin: bookingData.needsContactlessCheckin || false,
+    };
+
+    generateBookingPDF(bookingForPDF, property, property.owner || null);
+
   } catch (err) {
     toast.error(err.message || "Ошибка бронирования");
   }

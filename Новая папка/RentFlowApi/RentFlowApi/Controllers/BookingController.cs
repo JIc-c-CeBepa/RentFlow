@@ -125,10 +125,59 @@ namespace RentFlowApi.Controllers
                 TotalAmount = booking.TotalAmount,
                 PrepaymentPercent = booking.PrepaymentPercent,
                 PrepaymentAmount = booking.PrepaymentAmount,
-                NeedsContactlessCheckin = booking.NeedsContactlessCheckin
+                NeedsContactlessCheckin = booking.NeedsContactlessCheckin,
+                CreatedAt = booking.CreatedAt,
+                StatusId = statusId
             };
 
             return Ok(result);
+        }
+
+        [Authorize]
+        [HttpGet("my-bookings")]
+        public async Task<ActionResult> GetMyBookings()
+        {
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (!int.TryParse(userIdClaim, out int userId))
+                return Unauthorized("Не удалось определить пользователя");
+
+            var bookings = await _context.Bookings
+                .AsNoTracking()
+                .Include(b => b.Property)
+                    .ThenInclude(p => p.Owner)
+                .Where(b => b.UserId == userId)
+                .OrderByDescending(b => b.CreatedAt)
+                .Select(b => new
+                {
+                    b.Id,
+                    b.ArrivalDate,
+                    b.DepartureDate,
+                    b.GuestsCount,
+                    b.TotalAmount,
+                    b.PrepaymentAmount,
+                    b.PrepaymentPercent,
+                    b.StatusId,
+                    b.CreatedAt,
+                    b.NeedsContactlessCheckin,
+                    Property = new
+                    {
+                        b.Property.Title,
+                        b.Property.Address,
+                        b.Property.MaxGuests,
+                        b.Property.CheckInTime,
+                        b.Property.CheckOutTime,
+                        Owner = b.Property.Owner != null ? new
+                        {
+                            b.Property.Owner.CompanyName,
+                            b.Property.Owner.Phone,
+                            b.Property.Owner.Email,
+                            b.Property.Owner.Telegram
+                        } : null
+                    }
+                })
+                .ToListAsync();
+
+            return Ok(bookings);
         }
     }
 }

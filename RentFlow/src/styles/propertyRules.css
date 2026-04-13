@@ -7,10 +7,11 @@
 .property-rule-card {
   display: flex;
   gap: 16px;
-  background: rgba(24, 38, 29, 0.95);
-  border: 1px solid rgba(114, 140, 104, 0.35);
+  background: var(--bg-card-solid);
+  border: 1px solid var(--border-card);
   border-radius: 18px;
   padding: 18px 20px;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .property-rule-icon {
@@ -28,18 +29,21 @@
 .property-rule-name {
   font-size: 18px;
   font-weight: 700;
-  color: #f3efe7;
+  color: var(--text-primary);
   margin-bottom: 6px;
+  transition: color 0.3s ease;
 }
 
 .property-rule-description {
-  color: #d2c9bb;
+  color: var(--text-secondary);
   line-height: 1.5;
+  transition: color 0.3s ease;
 }
 
 .property-rules-empty {
-  background: rgba(24, 38, 29, 0.95);
-  border: 1px solid rgba(114, 140, 104, 0.35);
+  background: var(--bg-card-solid);
+  border: 1px solid var(--border-card);
   border-radius: 18px;
   padding: 20px;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }

@@ -326,6 +326,18 @@
         }
       }
     },
+    "/api/Booking/my-bookings": {
+      "get": {
+        "tags": [
+          "Booking"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Client/AddOwnerLinkToUser": {
       "post": {
         "tags": [
@@ -689,6 +701,10 @@
             "type": "string",
             "nullable": true
           },
+          "statusId": {
+            "type": "integer",
+            "format": "int32"
+          },
           "pricePerNight": {
             "type": "number",
             "format": "double"
@@ -707,6 +723,11 @@
           },
           "needsContactlessCheckin": {
             "type": "boolean"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
           }
         },
         "additionalProperties": false

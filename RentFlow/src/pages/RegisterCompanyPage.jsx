@@ -4,8 +4,6 @@ import { toast } from "react-toastify";
 import "../styles/registerCompanyPage.css";
 import { API_BASE_URL, authFetch, saveTokens } from "../api/authFetch";
 
-
-
 function RegisterCompanyPage() {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");

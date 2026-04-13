@@ -2,34 +2,47 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
 .register-company-page {
   min-height: 100vh;
   padding: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #0f1a14 0%, #18261d 45%, #221a14 100%);
+  background: var(--bg-gradient);
+  transition: background 0.3s ease;
 }
 
 .register-company-card {
   width: 100%;
   max-width: 720px;
-  background: rgba(24, 38, 29, 0.95);
-  border: 1px solid rgba(114, 140, 104, 0.35);
+  background: var(--bg-card-solid);
+  border: 1px solid var(--border-card);
   border-radius: 20px;
   padding: 30px;
-  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.35);
-  color: #f3efe7;
+  box-shadow: var(--shadow-card);
+  color: var(--text-primary);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
 .register-company-title {
   margin: 0 0 10px;
   font-size: 32px;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .register-company-subtitle {
   margin: 0 0 24px;
-  color: #d2c9bb;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
 }
 
 .register-company-form {
@@ -46,24 +59,31 @@
 
 .register-company-group label {
   font-size: 14px;
-  color: #d2c9bb;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
 }
 
 .register-company-group input,
 .register-company-group textarea {
   width: 100%;
   border-radius: 12px;
-  border: 1px solid rgba(114, 140, 104, 0.35);
-  background: rgba(255, 255, 255, 0.06);
-  color: #fff;
+  border: 1px solid var(--border-card);
+  background: var(--bg-input);
+  color: var(--text-primary);
   padding: 14px 16px;
   font-size: 15px;
   outline: none;
+  transition: border-color 0.2s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.register-company-group input::placeholder,
+.register-company-group textarea::placeholder {
+  color: var(--text-secondary);
 }
 
 .register-company-group input:focus,
 .register-company-group textarea:focus {
-  border-color: #c89b66;
+  border-color: var(--border-focus);
 }
 
 .register-company-group textarea {
@@ -86,17 +106,19 @@
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
+  transition: filter 0.3s ease;
 }
 
 .register-company-back-btn {
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
-  border: 1px solid rgba(114, 140, 104, 0.35);
+  background: var(--bg-input);
+  color: var(--text-primary);
+  border: 1px solid var(--border-card);
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .register-company-submit-btn {
   flex: 1;
-  background: linear-gradient(135deg, #b37a45, #d9a066);
+  background: var(--accent-gradient);
   color: #fff;
 }
 

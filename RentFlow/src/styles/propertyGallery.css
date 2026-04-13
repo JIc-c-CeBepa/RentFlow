@@ -10,9 +10,10 @@
   height: 560px;
   overflow: hidden;
   border-radius: 24px;
-  border: 1px solid rgba(114, 140, 104, 0.35);
-  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.28);
-  background: rgba(24, 38, 29, 0.95);
+  border: 1px solid var(--border-card);
+  box-shadow: var(--shadow-card);
+  background: var(--bg-card-solid);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .property-gallery-main-image {
@@ -57,6 +58,7 @@
   overflow: hidden;
   cursor: pointer;
   background: transparent;
+  transition: border-color 0.2s ease;
 }
 
 .property-gallery-thumb-btn.active {
@@ -71,13 +73,14 @@
 }
 
 .property-gallery-empty {
-  background: rgba(24, 38, 29, 0.95);
-  border: 1px solid rgba(114, 140, 104, 0.35);
+  background: var(--bg-card-solid);
+  border: 1px solid var(--border-card);
   border-radius: 24px;
   min-height: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 @media (max-width: 900px) {

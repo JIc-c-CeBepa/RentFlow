@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { CircleUser } from "lucide-react";
 import PropertyCard from "../components/PropertyCard";
 import ProfileSidebar from "../components/ProfileSidebar";
 import PropertyFilterSidebar from "../components/PropertyFilterSidebar";
+import BookingsModal from "../components/BookingsModal";
 import "../styles/clientPage.css";
 import { toast } from "react-toastify";
 import { API_BASE_URL, authFetch, logoutRequest } from "../api/authFetch";
@@ -19,6 +21,9 @@ function ClientPage() {
 
   const [ownerId, setOwnerId] = useState(null);
   const [profileOpen, setProfileOpen] = useState(false);
+  const [bookingsOpen, setBookingsOpen] = useState(false);
+  const [bookings, setBookings] = useState([]);
+  const [bookingsLoading, setBookingsLoading] = useState(false);
   const [filtersCollapsed, setFiltersCollapsed] = useState(false);
 
   const [code, setCode] = useState("");
@@ -221,7 +226,7 @@ function ClientPage() {
       setIsSubmitting(true);
 
       const response = await authFetch(
-        `${API_BASE_URL}/api/Property/AddOwnerLinkToUser`,
+        `${API_BASE_URL}/api/Client/AddOwnerLinkToUser`,
         {
           method: "POST",
           headers: {
@@ -338,7 +343,32 @@ function ClientPage() {
   }
 
   function handleOpenProperty(property) {
-  navigate(`/client/property/${property.id}`);
+    navigate(`/client/property/${property.id}`);
+  }
+
+  async function handleViewBookings() {
+    setProfileOpen(false);
+    setBookingsOpen(true);
+    
+    if (bookings.length > 0) return;
+    
+    try {
+      setBookingsLoading(true);
+      const response = await authFetch(`${API_BASE_URL}/api/Booking/my-bookings`, {
+        method: "GET",
+      });
+
+      if (!response.ok) {
+        throw new Error("Не удалось загрузить бронирования");
+      }
+
+      const data = await response.json();
+      setBookings(Array.isArray(data) ? data : []);
+    } catch (err) {
+      toast.error(err.message || "Ошибка загрузки бронирований");
+    } finally {
+      setBookingsLoading(false);
+    }
   }
 
   if (loading) {
@@ -362,13 +392,15 @@ function ClientPage() {
       <header className="client-topbar">
         <div className="client-logo">RentFlow</div>
 
-        <button
-          className="client-profile-btn"
-          type="button"
-          onClick={() => setProfileOpen(true)}
-        >
-          👤
-        </button>
+        <div className="client-topbar-actions">
+          <button
+            className="client-profile-btn"
+            type="button"
+            onClick={() => setProfileOpen(true)}
+          >
+            <CircleUser size={24} />
+          </button>
+        </div>
       </header>
 
       <main className="client-page-content">
@@ -451,6 +483,13 @@ function ClientPage() {
         profileSaving={profileSaving}
         onLogout={handleLogout}
         onRegisterCompany={() => navigate("/register-company")}
+        onViewBookings={handleViewBookings}
+      />
+
+      <BookingsModal
+        isOpen={bookingsOpen}
+        onClose={() => setBookingsOpen(false)}
+        bookings={bookings}
       />
     </div>
   );

@@ -4,9 +4,10 @@
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #0f1a14 0%, #18261d 45%, #221a14 100%);
-  color: #f3efe7;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .auth-page {
@@ -15,17 +16,43 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px;
+  background: var(--bg-gradient);
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.auth-theme-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--border-card);
+  border-radius: 50%;
+  background: var(--bg-card-solid);
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.auth-theme-btn:hover {
+  background: var(--bg-hover);
+  transform: scale(1.05);
 }
 
 .auth-card {
   width: 100%;
   max-width: 430px;
-  background: rgba(24, 38, 29, 0.95);
-  border: 1px solid rgba(114, 140, 104, 0.35);
+  background: var(--bg-card-solid);
+  border: 1px solid var(--border-card);
   border-radius: 18px;
   padding: 28px;
-  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-card);
   backdrop-filter: blur(6px);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .auth-tabs {
@@ -36,31 +63,32 @@ body {
 
 .tab {
   flex: 1;
-  border: 1px solid rgba(114, 140, 104, 0.35);
-  background: #243328;
-  color: #e8e0d1;
+  border: 1px solid var(--border-card);
+  background: var(--bg-input);
+  color: var(--text-secondary);
   padding: 12px;
   border-radius: 10px;
   cursor: pointer;
   font-size: 15px;
-  transition: 0.2s;
+  transition: 0.2s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .tab:hover {
-  background: #304335;
+  background: var(--bg-hover);
 }
 
 .tab.active {
-  background: linear-gradient(135deg, #6f8b5e 0%, #7b5a3a 100%);
-  color: #fffaf2;
-  border-color: rgba(164, 130, 92, 0.7);
+  background: var(--accent-gradient);
+  color: #fff;
+  border-color: transparent;
 }
 
 .auth-form h2 {
   margin-top: 0;
   margin-bottom: 20px;
   text-align: center;
-  color: #f4eadb;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .form-group {
@@ -71,19 +99,20 @@ body {
   display: block;
   margin-bottom: 8px;
   font-size: 14px;
-  color: #d9d2c3;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
 }
 
 .form-group input {
   width: 100%;
   padding: 13px 14px;
   border-radius: 10px;
-  border: 1px solid #4c5f4f;
-  background: #111b14;
-  color: #f3efe7;
+  border: 1px solid var(--border-card);
+  background: var(--bg-input);
+  color: var(--text-primary);
   font-size: 15px;
   outline: none;
-  transition: 0.2s;
+  transition: 0.2s ease, border-color 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
 
 .password-wrapper {
@@ -101,23 +130,22 @@ body {
   transform: translateY(-50%);
   width: 34px;
   height: 34px;
-  border: 1px solid rgba(114, 140, 104, 0.35);
+  border: 1px solid var(--border-card);
   border-radius: 50%;
-  background: rgba(36, 51, 40, 0.95);
-  color: #b9c4b5;
+  background: var(--bg-card-solid);
+  color: var(--text-secondary);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
-  transition: 0.2s;
+  transition: 0.2s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .password-toggle:hover {
-  background: #304335;
-  color: #f3efe7;
-  border-color: rgba(164, 130, 92, 0.55);
-  box-shadow: 0 0 0 3px rgba(127, 160, 110, 0.14);
+  background: var(--bg-hover);
+  color: var(--text-primary);
+  border-color: var(--border-focus);
 }
 
 .password-toggle:active {
@@ -129,17 +157,13 @@ body {
   height: 18px;
 }
 
-.password-toggle:hover {
-  color: #f3efe7;
-}
-
 .form-group input::placeholder {
-  color: #9eaa9a;
+  color: var(--text-secondary);
 }
 
 .form-group input:focus {
-  border-color: #7fa06e;
-  box-shadow: 0 0 0 3px rgba(127, 160, 110, 0.18);
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(201, 168, 108, 0.15);
 }
 
 .submit-btn {
@@ -148,17 +172,17 @@ body {
   padding: 14px;
   border: none;
   border-radius: 10px;
-  background: linear-gradient(135deg, #6f8b5e 0%, #7b5a3a 100%);
-  color: #fff9f2;
+  background: var(--accent-gradient);
+  color: #fff;
   font-size: 16px;
   cursor: pointer;
-  transition: 0.2s;
-  box-shadow: 0 8px 20px rgba(123, 90, 58, 0.25);
+  transition: 0.2s ease, filter 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 8px 20px rgba(201, 168, 108, 0.2);
 }
 
 .submit-btn:hover {
-  background: linear-gradient(135deg, #7d9b6c 0%, #8a6846 100%);
   transform: translateY(-1px);
+  filter: brightness(1.08);
 }
 
 .submit-btn:disabled {
@@ -170,16 +194,18 @@ body {
 .error-text {
   display: block;
   margin-top: 6px;
-  color: #ff9d8f;
+  color: var(--error-text);
   font-size: 13px;
+  transition: color 0.3s ease;
 }
 
 .password-hint {
   margin-top: -4px;
   margin-bottom: 16px;
-  color: #b9c4b5;
+  color: var(--text-secondary);
   font-size: 13px;
   line-height: 1.4;
+  transition: color 0.3s ease;
 }
 
 .toast {
@@ -195,7 +221,7 @@ body {
   gap: 10px;
   align-items: center;
   z-index: 9999;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-card);
 }
 
 .toast--success {
@@ -229,5 +255,10 @@ body {
     left: 10px;
     max-width: none;
     min-width: auto;
+  }
+
+  .auth-theme-btn {
+    top: 12px;
+    right: 12px;
   }
 }

@@ -5,11 +5,12 @@
 }
 
 .booking-sidebar-card {
-  background: rgba(24, 38, 29, 0.95);
-  border: 1px solid rgba(114, 140, 104, 0.35);
+  background: var(--bg-card-solid);
+  border: 1px solid var(--border-card);
   border-radius: 22px;
   padding: 20px;
-  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.28);
+  box-shadow: var(--shadow-card);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .booking-sidebar-price-row {
@@ -19,12 +20,14 @@
 .booking-sidebar-price-main {
   font-size: 36px;
   font-weight: 800;
-  color: #f3efe7;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .booking-sidebar-price-sub {
-  color: #d2c9bb;
+  color: var(--text-secondary);
   margin-top: 4px;
+  transition: color 0.3s ease;
 }
 
 .booking-sidebar-field {
@@ -34,21 +37,23 @@
 .booking-sidebar-summary {
   margin-top: 18px;
   padding-top: 16px;
-  border-top: 1px solid rgba(114, 140, 104, 0.25);
+  border-top: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
   gap: 10px;
+  transition: border-color 0.3s ease;
 }
 
 .booking-sidebar-summary-row {
   display: flex;
   justify-content: space-between;
   gap: 12px;
-  color: #d2c9bb;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
 }
 
 .booking-sidebar-summary-row.total {
-  color: #f3efe7;
+  color: var(--text-primary);
   font-size: 18px;
   font-weight: 700;
 }
@@ -59,17 +64,17 @@
   margin-top: 18px;
   border: none;
   border-radius: 14px;
-  background: linear-gradient(135deg, #b37a45, #d9a066);
+  background: var(--accent-gradient);
   color: #fff;
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
-  transition: 0.2s ease;
+  transition: 0.2s ease, filter 0.3s ease;
 }
 
 .booking-sidebar-book-btn:hover {
   transform: translateY(-1px);
-  filter: brightness(1.05);
+  filter: brightness(1.08);
 }
 
 /* ===== Поля MUI ===== */
@@ -82,69 +87,75 @@
 .booking-mui-field .MuiOutlinedInput-root,
 .booking-mui-select .MuiOutlinedInput-root {
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.06);
-  color: #fff;
+  background: var(--bg-input);
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .booking-mui-field .MuiOutlinedInput-notchedOutline,
 .booking-mui-select .MuiOutlinedInput-notchedOutline {
-  border-color: rgba(114, 140, 104, 0.35);
+  border-color: var(--border-card);
+  transition: border-color 0.3s ease;
 }
 
 .booking-mui-field .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline,
 .booking-mui-select .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
-  border-color: rgba(200, 155, 102, 0.7);
+  border-color: var(--border-focus);
 }
 
 .booking-mui-field .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline,
 .booking-mui-select .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-  border-color: #c89b66;
+  border-color: var(--border-focus);
 }
 
 .booking-mui-field .MuiInputLabel-root,
 .booking-mui-select .MuiInputLabel-root {
-  color: #c7b9a7;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
 }
 
 .booking-mui-field .MuiInputLabel-root.Mui-focused,
 .booking-mui-select .MuiInputLabel-root.Mui-focused {
-  color: #d6c5ae;
+  color: var(--text-secondary);
 }
 
 .booking-mui-field input,
 .booking-mui-field .MuiInputBase-input,
 .booking-mui-select .MuiSelect-select {
-  color: #fff !important;
-  -webkit-text-fill-color: #fff !important;
+  color: var(--text-primary) !important;
+  -webkit-text-fill-color: var(--text-primary) !important;
+  transition: color 0.3s ease;
 }
 
 .booking-mui-field .MuiSvgIcon-root,
 .booking-mui-select .MuiSvgIcon-root {
-  color: #f3efe7;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 /* ===== Popup календаря ===== */
 
 .MuiPickersPopper-root .MuiPaper-root {
-  background: #18261d !important;
-  color: #f3efe7 !important;
-  border: 1px solid rgba(114, 140, 104, 0.35);
+  background: var(--bg-card-solid) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-card);
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .MuiPickersCalendarHeader-label {
-  color: #f3efe7 !important;
+  color: var(--text-primary) !important;
 }
 
 .MuiPickersArrowSwitcher-button {
-  color: #f3efe7 !important;
+  color: var(--text-primary) !important;
 }
 
 .MuiDayCalendar-weekDayLabel {
-  color: #c7b9a7 !important;
+  color: var(--text-secondary) !important;
 }
 
 .MuiPickersDay-root {
-  color: #f3efe7 !important;
+  color: var(--text-primary) !important;
 }
 
 .MuiPickersDay-root:hover {
@@ -162,7 +173,7 @@
 
 .MuiPickersYear-yearButton,
 .MuiPickersMonth-monthButton {
-  color: #f3efe7 !important;
+  color: var(--text-primary) !important;
 }
 
 .MuiPickersYear-yearButton.Mui-selected,

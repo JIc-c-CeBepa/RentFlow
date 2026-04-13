@@ -2,11 +2,59 @@
   box-sizing: border-box;
 }
 
+:root,
+[data-theme="dark"] {
+  --bg-gradient: linear-gradient(135deg, #0f1a14 0%, #18261d 45%, #221a14 100%);
+  --bg-page: #151f18;
+  --bg-card: rgba(24, 38, 29, 0.95);
+  --bg-card-solid: #1a2820;
+  --bg-input: rgba(255, 255, 255, 0.06);
+  --bg-hover: rgba(255, 255, 255, 0.12);
+  --bg-topbar: rgba(24, 38, 29, 0.88);
+  --border-color: rgba(114, 140, 104, 0.25);
+  --border-card: rgba(114, 140, 104, 0.35);
+  --border-focus: #c89b66;
+  --text-primary: #f3efe7;
+  --text-secondary: #d2c9bb;
+  --accent-gradient: linear-gradient(135deg, #b37a45, #d9a066);
+  --shadow-card: 0 14px 45px rgba(0, 0, 0, 0.35);
+  --error-bg: rgba(180, 64, 64, 0.12);
+  --error-border: rgba(180, 64, 64, 0.35);
+  --error-text: #ffb1b1;
+  --success-bg: rgba(76, 140, 90, 0.12);
+  --success-border: rgba(76, 140, 90, 0.35);
+  --success-text: #b6f0bf;
+}
+
+[data-theme="light"] {
+  --bg-gradient: linear-gradient(135deg, #fefcf8 0%, #f5f0e8 50%, #faf5eb 100%);
+  --bg-page: #f8f4ee;
+  --bg-card: rgba(255, 252, 245, 0.98);
+  --bg-card-solid: #fffcf5;
+  --bg-input: rgba(180, 160, 140, 0.08);
+  --bg-hover: rgba(180, 160, 140, 0.15);
+  --bg-topbar: rgba(255, 252, 245, 0.95);
+  --border-color: rgba(160, 140, 120, 0.2);
+  --border-card: rgba(160, 140, 120, 0.3);
+  --border-focus: #c9a86c;
+  --text-primary: #3d3428;
+  --text-secondary: #6b5d4d;
+  --accent-gradient: linear-gradient(135deg, #c9a86c, #e0c598);
+  --shadow-card: 0 14px 45px rgba(100, 80, 50, 0.12);
+  --error-bg: rgba(180, 64, 64, 0.08);
+  --error-border: rgba(180, 64, 64, 0.25);
+  --error-text: #b84a4a;
+  --success-bg: rgba(76, 140, 90, 0.08);
+  --success-border: rgba(76, 140, 90, 0.25);
+  --success-text: #4a8b5a;
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #0f1a14 0%, #18261d 45%, #221a14 100%);
-  color: #f3efe7;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .client-page {
@@ -20,7 +68,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #f3efe7;
+  color: var(--text-primary);
   font-size: 22px;
 }
 
@@ -30,35 +78,64 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(114, 140, 104, 0.25);
-  background: rgba(24, 38, 29, 0.88);
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-topbar);
   backdrop-filter: blur(8px);
   position: sticky;
   top: 0;
   z-index: 50;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .client-logo {
   font-size: 24px;
   font-weight: 700;
-  color: #f3efe7;
+  color: var(--text-primary);
   letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.client-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.client-theme-btn {
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--border-card);
+  border-radius: 50%;
+  background: var(--bg-input);
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.client-theme-btn:hover {
+  background: var(--bg-hover);
+  transform: scale(1.05);
 }
 
 .client-profile-btn {
   width: 46px;
   height: 46px;
-  border: 1px solid rgba(114, 140, 104, 0.4);
+  border: 1px solid var(--border-card);
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
-  color: #f3efe7;
-  font-size: 22px;
+  background: var(--bg-input);
+  color: var(--text-primary);
   cursor: pointer;
-  transition: 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .client-profile-btn:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: var(--bg-hover);
 }
 
 .client-page-content {
@@ -67,6 +144,8 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
   padding: 24px 24px 24px 16px;
+  background: var(--bg-page);
+  transition: background 0.3s ease;
 }
 
 
@@ -75,41 +154,50 @@ body {
 .client-empty-box {
   width: 100%;
   max-width: 520px;
-  background: rgba(24, 38, 29, 0.95);
-  border: 1px solid rgba(114, 140, 104, 0.35);
+  background: var(--bg-card-solid);
+  border: 1px solid var(--border-card);
   border-radius: 20px;
   padding: 30px;
-  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.35);
+  box-shadow: var(--shadow-card);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .client-link-title,
 .client-connected-box h1 {
   margin: 0 0 12px;
   font-size: 28px;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .client-link-subtitle,
 .client-connected-box p {
   margin: 0 0 20px;
-  color: #d2c9bb;
+  color: var(--text-secondary);
   line-height: 1.45;
+  transition: color 0.3s ease;
 }
 
 .client-link-input {
   width: 100%;
   height: 50px;
   border-radius: 12px;
-  border: 1px solid rgba(114, 140, 104, 0.35);
-  background: rgba(255, 255, 255, 0.06);
-  color: #fff;
+  border: 1px solid var(--border-card);
+  background: var(--bg-input);
+  color: var(--text-primary);
   padding: 0 16px;
   font-size: 16px;
   margin-bottom: 16px;
   outline: none;
+  transition: border-color 0.2s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.client-link-input::placeholder {
+  color: var(--text-secondary);
 }
 
 .client-link-input:focus {
-  border-color: #c89b66;
+  border-color: var(--border-focus);
 }
 
 .client-attach-btn {
@@ -117,17 +205,17 @@ body {
   height: 50px;
   border: none;
   border-radius: 12px;
-  background: linear-gradient(135deg, #b37a45, #d9a066);
-  color: white;
+  background: var(--accent-gradient);
+  color: #fff;
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
-  transition: 0.2s ease;
+  transition: 0.2s ease, filter 0.3s ease;
 }
 
 .client-attach-btn:hover {
   transform: translateY(-1px);
-  filter: brightness(1.05);
+  filter: brightness(1.08);
 }
 
 .client-attach-btn:disabled {
@@ -155,24 +243,29 @@ body {
 .client-properties-title {
   margin: 0 0 10px;
   font-size: 34px;
-  color: #f3efe7;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .client-properties-subtitle {
   margin: 0;
-  color: #d2c9bb;
+  color: var(--text-secondary);
   font-size: 16px;
+  transition: color 0.3s ease;
 }
 
 .client-page-loading-inner {
   padding: 30px 0;
   font-size: 20px;
-  color: #f3efe7;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .client-empty-box {
   text-align: center;
   max-width: 100%;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
 }
 
 .client-properties-grid {
@@ -187,29 +280,36 @@ body {
   padding: 14px 16px;
   border-radius: 14px;
   font-size: 14px;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 .client-error {
-  background: rgba(180, 64, 64, 0.12);
-  border: 1px solid rgba(180, 64, 64, 0.35);
-  color: #ffb1b1;
+  background: var(--error-bg);
+  border: 1px solid var(--error-border);
+  color: var(--error-text);
 }
 
 .client-success {
-  background: rgba(76, 140, 90, 0.12);
-  border: 1px solid rgba(76, 140, 90, 0.35);
-  color: #b6f0bf;
+  background: var(--success-bg);
+  border: 1px solid var(--success-border);
+  color: var(--success-text);
 }
 
 .Toastify__toast {
   border-radius: 14px;
-  background: #18261d;
-  color: #f3efe7;
-  border: 1px solid rgba(114, 140, 104, 0.35);
+  background: var(--bg-card-solid);
+  color: var(--text-primary);
+  border: 1px solid var(--border-card);
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .Toastify__progress-bar {
-  background: linear-gradient(135deg, #b37a45, #d9a066);
+  background: var(--accent-gradient);
+  transition: filter 0.3s ease;
+}
+
+[data-theme="light"] .Toastify__toast {
+  box-shadow: var(--shadow-card);
 }
 
 @media (max-width: 1100px) {
